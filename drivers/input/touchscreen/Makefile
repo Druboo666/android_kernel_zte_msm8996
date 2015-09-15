@@ -95,3 +95,5 @@ obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX) += synaptics_dsx_zte/
 obj-$(CONFIG_FORCE_TOUCH_NDT) += ndt_stress.o
 
 obj-$(CONFIG_BOEFFLA_POWERKEY_HELPER) += boeffla_powerkey_helper.o
+
+obj-$(CONFIG_TOUCHBOOST_CONTROL)	+= touchboost_switch.o
