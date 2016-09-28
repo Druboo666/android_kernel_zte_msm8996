@@ -219,6 +219,9 @@ config CPU_FREQ_DEFAULT_GOV_WHEATLEY
 	---help---
 	  Use the CPUFreq governor 'wheatley' as default.		  
 
+config CPU_FREQ_DEFAULT_GOV_DYNAMIC_INTERACTIVE
+	bool "dynamic_interactive"
+	select CPU_FREQ_GOV_DYNAMIC_INTERACTIVE
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -392,7 +395,11 @@ config CPU_FREQ_GOV_DESPAIR
 	
 config CPU_FREQ_GOV_WHEATLEY
 	tristate "'wheatley' cpufreq governor"
-	depends on CPU_FREQ		  	  
+	depends on CPU_FREQ
+	
+config CPU_FREQ_GOV_DYNAMIC_INTERACTIVE
+	tristate "'dynamic_interactive' cpufreq governor"
+	depends on CPU_FREQ			  	  
 
 config CPU_FREQ_GOV_RELAXED
 	tristate "'relaxed' cpufreq governor"
