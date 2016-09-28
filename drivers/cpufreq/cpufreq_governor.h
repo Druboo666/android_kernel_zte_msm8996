@@ -198,6 +198,9 @@ struct cs_dbs_tuners {
 	unsigned int boost_enabled;
 	unsigned int boost_count;
 	unsigned int boost_ceiling;
+	unsigned int twostep_threshold;
+	unsigned int twostep_counter;
+	u64 twostep_time;
 };
 
 struct ex_dbs_tuners {
