@@ -526,6 +526,9 @@ extern struct cpufreq_governor cpufreq_gov_yankactive;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_IRONACTIVE)
 extern struct cpufreq_governor cpufreq_gov_ironactive;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_ironactive)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BIOSHOCK)
+extern struct cpufreq_governor cpufreq_gov_bioshock;
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_bioshock)
 #endif
 
 /*********************************************************************
