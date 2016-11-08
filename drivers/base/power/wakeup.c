@@ -34,6 +34,8 @@ static bool enable_bluedroid_timer_ws = true;
 module_param(enable_bluedroid_timer_ws, bool, 0644);
 static bool enable_bluesleep_ws = true;
 module_param(enable_bluesleep_ws, bool, 0644);
+static bool enable_ipa_ws = true;
+module_param(enable_ipa_ws, bool, 0644);
 
 #include "power.h"
 
@@ -508,13 +510,9 @@ static void wakeup_source_activate(struct wakeup_source *ws)
 		(!enable_wlan_wake_ws &&
 			!strcmp(ws->name, "wlan_wake")) ||
 		(!enable_bluedroid_timer_ws &&
-	if (!enable_wlan_wake_ws && !strcmp(ws->name, "wlan_wake"))
-                return;
-
-	if (!enable_bluedroid_timer_ws && !strcmp(ws->name, "bluedroid_timer"))
-		return;
-
-			!strcmp(ws->name, "bluedroid_timer"))) {
+			!strcmp(ws->name, "bluedroid_timer")) ||
+		(!enable_ipa_ws &&
+			!strcmp(ws->name, "IPA_WS")))) {
 		/*
 		 * let's try and deactivate this wakeup source since the user
 		 * clearly doesn't want it. The user is responsible for any
