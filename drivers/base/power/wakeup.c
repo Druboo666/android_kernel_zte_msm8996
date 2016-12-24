@@ -16,7 +16,6 @@
 #include <linux/debugfs.h>
 #include <linux/types.h>
 #include <trace/events/power.h>
-#include <linux/moduleparam.h>
 
 #include "power.h"
 
@@ -466,9 +465,6 @@ EXPORT_SYMBOL_GPL(device_set_wakeup_enable);
 static void wakeup_source_activate(struct wakeup_source *ws)
 {
 	unsigned int cec;
-
-	if (!enable_bluedroid_timer_ws && !strcmp(ws->name, "bluedroid_timer"))
-		return;
 
 	/*
 	 * active wakeup source should bring the system
