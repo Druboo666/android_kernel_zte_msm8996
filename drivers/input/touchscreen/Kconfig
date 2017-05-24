@@ -1135,4 +1135,8 @@ config FORCE_TOUCH_NDT
        default y
        help
          This driver provides support for Force Touch by NDT.
+
+config TOUCHSCREEN_SWEEP2SLEEP
+	bool "Enable kernel support for Sweep2Sleep"
+	default n
 endif
