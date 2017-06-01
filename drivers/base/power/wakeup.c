@@ -677,7 +677,7 @@ static void wakeup_source_deactivate(struct wakeup_source *ws)
 	cec = atomic_add_return(MAX_IN_PROGRESS, &combined_event_count);
 	trace_wakeup_source_deactivate(ws->name, cec);
 
-	/*ZTE ++++*/
+	/*ZTE
 	#ifdef DUMP_WAKELOCK
 	if (0 != ws_debug_mask)
 		pr_info("ZTE_PM_LOCK deactive %s\n" , ws->name);
@@ -689,7 +689,7 @@ static void wakeup_source_deactivate(struct wakeup_source *ws)
 			WARN(1 , "ZTE_PM_WAKELOCK release wakelock %s:\n" , ws->name);
 	}
 	#endif
-	/*ZTE ----*/
+	ZTE ----*/
 
 	split_counters(&cnt, &inpr);
 	if (!inpr && waitqueue_active(&wakeup_count_wait_queue))
