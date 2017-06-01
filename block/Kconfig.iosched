@@ -135,6 +135,13 @@ config IOSCHED_SWITCHER
 	  in order to grab the request_queue pointer that should have its I/O
 	  scheduler switched to Noop when the screen turns off.
 
+config IOSCHED_VR
+	tristate "V(R) I/O scheduler"
+	default y
+	---help---
+	  Requests are chosen according to SSTF with a penalty of rev_penalty
+	  for switching head direction.
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_MAPLE
@@ -182,6 +189,8 @@ choice
 	config DEFAULT_SIOPLUS
 		bool "SIOPLUS" if IOSCHED_SIOPLUS=y
 
+	config DEFAULT_VR
+		bool "V(R)" if IOSCHED_VR=y
 endchoice
 
 config DEFAULT_IOSCHED
@@ -196,6 +205,7 @@ config DEFAULT_IOSCHED
 	default "tripndroid" if DEFAULT_TRIPNDROID
 	default "sioplus" if DEFAULT_SIOPLUS
 	default "maple" if DEFAULT_MAPLE
+	default "vr" if DEFAULT_VR
 endmenu
 
 endif
