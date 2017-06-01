@@ -1536,12 +1536,12 @@ static int lpm_cpuidle_select(struct cpuidle_driver *drv,
 	return idx;
 }
 
-<<<<<<< HEAD
+
 /*ZTE ++++*/
 extern bool zte_msm_cpu_pm_enter_sleep(enum msm_pm_sleep_mode mode, bool from_idle);
 extern void zte_pm_before_powercollapse(void);
 /*ZTE ----*/
-=======
+
 static void update_history(struct cpuidle_device *dev, int idx)
 {
 	struct lpm_history *history = &per_cpu(hist, dev->cpu);
