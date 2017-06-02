@@ -1574,7 +1574,6 @@ static void update_history(struct cpuidle_device *dev, int idx)
 	if (history->hptr >= MAXSAMPLES)
 		history->hptr = 0;
 }
->>>>>>> 0b2cc66... cpuidle: lpm-levels: Consider history during LPM selection
 
 static int lpm_cpuidle_enter(struct cpuidle_device *dev,
 		struct cpuidle_driver *drv, int idx)
